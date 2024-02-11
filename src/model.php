@@ -1,5 +1,6 @@
 <?php
-$nomBase = "Sitecacao";
+// Connexion à la base de données avec PDO
+$nomBase = "sitecacao";
 $adrServ = "localhost";
 $portServ = 3306;
 $userName = "root";
@@ -13,3 +14,15 @@ try {
 } catch (Exception $e) {
     die("Erreur : " . $e->getMessage());
 }
+
+// Fonction pour exécuter une requête SQL et récupérer les résultats
+function get_result($query) {
+    global $pdo; // Utiliser la connexion PDO dans cette fonction
+
+    // Exécution de la requête SQL
+    $result = $pdo->query($query);
+
+    return $result;
+}
+?>
+
