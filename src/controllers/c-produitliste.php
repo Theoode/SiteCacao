@@ -1,38 +1,35 @@
 <?php
+
 require_once('src/model.php');
 
-// Appel de la fonction pour récupérer les produits
-$produits = produitliste();
-
-// Inclusion de la vue
-require('view/v-produitliste.php');
-require('view/inc/footer.php');
-
-
 function produitliste() {
-    global $pdo; // Utiliser la connexion PDO dans cette fonction
+
+    global $pdo;
+
+    $menu['page'] = 'produitliste';
+    require('view/inc/head.php');
+    require('view/inc/header.php');
+
+    // Récupérer les produits
+    $produits = array(); // Initialisation du tableau de produits
 
     $query = "SELECT * FROM produit";
-
-    // Exécution de la requête SQL
     $result = $pdo->query($query);
 
-    $produits = array();
-
-    // Vérifier si la requête a été exécutée avec succès
     if ($result) {
-        // Récupérer le nombre de lignes retournées par la requête
-        $num_rows = $result->rowCount();
-
-        // Si des lignes ont été retournées, parcourir les résultats
-        if ($num_rows > 0) {
-            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                $produits[] = $row;
-            }
-        }
+        // Récupérer tous les produits sous forme de tableau associatif
+        $produits = $result->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+        echo "Aucun produit trouvé.";
     }
 
-    return $produits;
+    require('view/v-produitliste.php');
+
 }
 
+
+
+
 ?>
+
+
