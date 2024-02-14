@@ -3,19 +3,18 @@
     <div id="default-carousel" class="relative " data-carousel="static">
 
         <!-- Carousel wrapper -->
-        <div class="overflow-hidden relative h-screen rounded-lg sm:h-96 xl:h-104 2xl:h-120" style="height: 500px"> <!-- Modifiez les valeurs de hauteur ici -->
+        <div class="overflow-hidden relative h-screen  sm:h-96 xl:h-104 2xl:h-120" style="height: 500px">
             <!-- Item 1 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <span class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
-                <img src="src/images/ban1.jpg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+                <img src="src/images/ban1.jpg" class="block top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2" alt="...">
             </div>
             <!-- Item 2 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="src/images/ban2.jpg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+                <img src="src/images/ban2.jpg" class="block  top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2" alt="...">
             </div>
             <!-- Item 3 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="src/images/ban3.jpg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+                <img src="src/images/ban3.jpg" class="block  top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2" alt="...">
             </div>
         </div>
 
