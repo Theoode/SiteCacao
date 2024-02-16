@@ -41,44 +41,46 @@
     </div>
 
     <div class="bg-white">
-        <div class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+        <div class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4  sm:px-6  lg:max-w-7xl lg:grid-cols-2 lg:px-8">
             <div>
-                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Technical Specifications</h2>
-                <p class="mt-4 text-gray-500">The walnut wood card tray is precision milled to perfectly fit a stack of Focus cards. The powder coated steel divider separates active cards from new ones, or can be used to archive important task lists.</p>
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Nos engagements</h2>
+                <p class="mt-4 text-gray-500">Nous nous engageons à promouvoir des pratiques durables, à soutenir les communautés productrices et à offrir des produits de qualité exceptionnelle cultivés avec passion et respect pour l'environnement.</p>
 
                 <dl class="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
                     <div class="border-t border-gray-200 pt-4">
-                        <dt class="font-medium text-gray-900">Origin</dt>
-                        <dd class="mt-2 text-sm text-gray-500">Designed by Good Goods, Inc.</dd>
+                        <dt class="font-medium text-gray-900">Origine</dt>
+                        <dd class="mt-2 text-sm text-gray-500">Nos méthodes d’extraction sont responsables et respectueuses de l’environnement.</dd>
                     </div>
                     <div class="border-t border-gray-200 pt-4">
-                        <dt class="font-medium text-gray-900">Material</dt>
-                        <dd class="mt-2 text-sm text-gray-500">Solid walnut base with rare earth magnets and powder coated steel card cover</dd>
+                        <dt class="font-medium text-gray-900">Authenticité</dt>
+                        <dd class="mt-2 text-sm text-gray-500">Nos plantations sont situés au Ghana pour garantir un arome intense.</dd>
                     </div>
                     <div class="border-t border-gray-200 pt-4">
-                        <dt class="font-medium text-gray-900">Dimensions</dt>
-                        <dd class="mt-2 text-sm text-gray-500">6.25&quot; x 3.55&quot; x 1.15&quot;</dd>
+                        <dt class="font-medium text-gray-900">Polyvalence</dt>
+                        <dd class="mt-2 text-sm text-gray-500">Nous possédons une large gamme de cacao du plus doux au plus fort</dd>
                     </div>
                     <div class="border-t border-gray-200 pt-4">
-                        <dt class="font-medium text-gray-900">Finish</dt>
-                        <dd class="mt-2 text-sm text-gray-500">Hand sanded and finished with natural oil</dd>
+                        <dt class="font-medium text-gray-900">Création</dt>
+                        <dd class="mt-2 text-sm text-gray-500">Vous pouvez réaliser des boissons, patisseries et de nombreuses recette.</dd>
                     </div>
                     <div class="border-t border-gray-200 pt-4">
-                        <dt class="font-medium text-gray-900">Includes</dt>
-                        <dd class="mt-2 text-sm text-gray-500">Wood card tray and 3 refill packs</dd>
+                        <dt class="font-medium text-gray-900">Responsabilité</dt>
+                        <dd class="mt-2 text-sm text-gray-500">Nos sachet sont en matière organique recyclés</dd>
                     </div>
                     <div class="border-t border-gray-200 pt-4">
-                        <dt class="font-medium text-gray-900">Considerations</dt>
-                        <dd class="mt-2 text-sm text-gray-500">Made from natural materials. Grain and color vary with each item.</dd>
+                        <dt class="font-medium text-gray-900">Environnement</dt>
+                        <dd class="mt-2 text-sm text-gray-500">Deux euros sont reversés par commande pour la plantation d’arbres .</dd>
                     </div>
                 </dl>
             </div>
-            <div class="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
-                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg" alt="Walnut card tray with white powder coated steel divider and 3 punchout holes." class="rounded-lg bg-gray-100">
-                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-02.jpg" alt="Top down view of walnut card tray with embedded magnets and card groove." class="rounded-lg bg-gray-100">
-                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-03.jpg" alt="Side of walnut card tray with card groove and recessed card area." class="rounded-lg bg-gray-100">
-                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-04.jpg" alt="Walnut card tray filled with cards and card angled in dedicated groove." class="rounded-lg bg-gray-100">
+            <div class="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8 pt-48">
+                <img src="src/images/image1.jpg" alt="Walnut card tray with white powder coated steel divider and 3 punchout holes." class="rounded-lg bg-gray-100 place-self-end">
+                <img src="src/images/image2.jpg" alt="Top down view of walnut card tray with embedded magnets and card groove." class="rounded-lg bg-gray-100 place-self-end">
+                <img src="src/images/image4.jpg" alt="Side of walnut card tray with card groove and recessed card area." class="rounded-lg bg-gray-100">
+                <img src="src/images/image3.jpg" alt="Walnut card tray filled with cards and card angled in dedicated groove." class="rounded-lg bg-gray-100 ">
             </div>
+
+
         </div>
     </div>
 
