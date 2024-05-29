@@ -48,7 +48,6 @@ function inscription()
         $menu['page'] = 'inscription';
         require('view/inc/head.php');
         require('view/v-inscription.php');
-        require('view/inc/footer.php');
     }
 }
 

@@ -49,6 +49,5 @@ function conexion()
         $menu['page'] = 'connexion';
         require('view/inc/head.php');
         require('view/v-conexion.php');
-        require('view/inc/footer.php');
     }
 }
