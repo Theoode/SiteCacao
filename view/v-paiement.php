@@ -1,5 +1,5 @@
 <h1>Paiement</h1>
-
+<script src="https://www.paypal.com/sdk/js?client-id=ARihLWW7p_qff_fIs8w6Dzoxz_9KxNmlZa6SHBcAZLDn1vmID00O9pX2C6kZRLqVInLIT_Wys3C7W0Bs"></script>
 <!-- Le conteneur des boutons PayPal -->
 <div id="paypal-boutons"></div>
 
