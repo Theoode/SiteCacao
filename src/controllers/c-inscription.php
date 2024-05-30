@@ -17,8 +17,6 @@ function inscription()
         $code_postal = $_POST['code_postal'];
         $age = $_POST['age'];
 
-        // Vous pouvez ajouter des validations supplémentaires ici
-
         // Insérer les données dans la base de données
         $conn = mysqli_connect("localhost", "nom_utilisateur", "mot_de_passe", "nom_base_de_donnees");
 
@@ -31,8 +29,7 @@ function inscription()
         $hashed_password = password_hash($mdp, PASSWORD_DEFAULT);
 
         // Préparer la requête SQL pour insérer l'utilisateur
-        $sql = /** @lang text */
-            "INSERT INTO conexion (mail, mdp, sexe, nom, prenom, adresse, code_postal, age) VALUES ('$mail', '$hashed_password', '$sexe', '$nom', '$prenom', '$adresse', '$code_postal', '$age')";
+        $sql = "INSERT INTO conexion (mail, mdp, sexe, nom, prenom, adresse, code_postal, age) VALUES ('$mail', '$hashed_password', '$sexe', '$nom', '$prenom', '$adresse', '$code_postal', '$age')";
 
         // Exécuter la requête
         if (mysqli_query($conn, $sql)) {
@@ -51,3 +48,4 @@ function inscription()
         require('view/v-inscription.php');
     }
 }
+
