@@ -13,7 +13,8 @@ function produitliste() {
     // Récupérer les produits
     $produits = array(); // Initialisation du tableau de produits
 
-    $query = "SELECT * FROM produit";
+    $query = /** @lang text */
+        "SELECT * FROM produit";
     $result = $pdo->query($query);
 
     if ($result) {
@@ -27,9 +28,5 @@ function produitliste() {
 
 }
 
-
-
-
-?>
 
 

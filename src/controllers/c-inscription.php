@@ -31,7 +31,8 @@ function inscription()
         $hashed_password = password_hash($mdp, PASSWORD_DEFAULT);
 
         // Préparer la requête SQL pour insérer l'utilisateur
-        $sql = "INSERT INTO conexion (mail, mdp, sexe, nom, prenom, adresse, code_postal, age) VALUES ('$mail', '$hashed_password', '$sexe', '$nom', '$prenom', '$adresse', '$code_postal', '$age')";
+        $sql = /** @lang text */
+            "INSERT INTO conexion (mail, mdp, sexe, nom, prenom, adresse, code_postal, age) VALUES ('$mail', '$hashed_password', '$sexe', '$nom', '$prenom', '$adresse', '$code_postal', '$age')";
 
         // Exécuter la requête
         if (mysqli_query($conn, $sql)) {
@@ -50,4 +51,3 @@ function inscription()
         require('view/v-inscription.php');
     }
 }
-

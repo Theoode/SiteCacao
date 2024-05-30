@@ -19,7 +19,8 @@ function conexion()
         }
 
         // Préparer la requête SQL pour récupérer l'utilisateur
-        $sql = "SELECT * FROM conexion WHERE mail='$mail'";
+        $sql = /** @lang text */
+            "SELECT * FROM conexion WHERE mail='$mail'";
 
         // Exécuter la requête
         $result = mysqli_query($conn, $sql);
