@@ -6,6 +6,8 @@ require_once('src/model.php');
 
 function accueil()
 {
+    $produits = getRandomProducts();
+
     $menu['page'] = 'accueil';
     require('view/inc/head.php');
     require('view/inc/header.php');
@@ -13,24 +15,19 @@ function accueil()
 
 }
 
-function getRandomProducts($limit = 4) {
+function getRandomProducts(){
+
     global $pdo;
 
-    try {
-
-        $query = /** @lang text */
-            "SELECT * FROM produit ORDER BY RAND() LIMIT :limit";
-        $stmt = $pdo->prepare($query);
-        $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
-        $stmt->execute();
-
-        $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        return $produits;
-    } catch (Exception $e) {
-        echo "Erreur lors de la récupération des produits : " . $e->getMessage();
-        return [];
+    $query = /** @lang text */
+       "SELECT * FROM produit ORDER BY RAND()";
+     $result = $pdo->query($query);
+    if ($result) {
+        // Récupérer tous les produits sous forme de tableau associatif
+        $produits = $result->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+        echo "Aucun produit trouvé.";
     }
+    return $produits;
 }
 
-getRandomProducts();
