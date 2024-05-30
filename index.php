@@ -4,6 +4,7 @@ require_once('src/controllers/c-produitliste.php');
 require_once('src/controllers/c-conexion.php');
 require_once('src/controllers/c-inscription.php');
 require_once('src/controllers/c-paiement.php');
+require_once('src/controllers/c-detailproduit.php');
 
 if(isset($_GET['url']) && $_GET['url']) {
     $url = rtrim($_GET['url'], '/');
@@ -23,6 +24,10 @@ if(isset($_GET['url']) && $_GET['url']) {
 
             case 'paiement':
                 paiement();
+                break;
+
+            case 'detailproduit':
+                detailproduit();
                 break;
 
             default :
