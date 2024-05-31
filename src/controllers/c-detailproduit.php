@@ -53,6 +53,7 @@ if (isset($_POST['id_produit']) && isset($_POST['quantite']) && isset($_POST['pr
     ajouter_produit($id_produit, $quantite, $prix,$nom_produit,$photo_produit);
 }
 
+//Ajout de produit dans la base////
 function ajouter_produit($id_produit, $quantite, $prix, $nom_produit, $photo_produit)
 {
     global $pdo;
@@ -73,7 +74,7 @@ function ajouter_produit($id_produit, $quantite, $prix, $nom_produit, $photo_pro
 
         if (!$panier_exist) {
             // Si le panier n'existe pas dans la base de données, insérer un nouveau panier
-            $query_insert_panier = "INSERT INTO Panier (id_panier, produits_id, produits_prix, produits_qtt ,produits_nom,produits_photo) VALUES (:id_panier, '', '', '','','')";
+            $query_insert_panier = "INSERT INTO Panier (id_panier, produits_id, produits_prix, produits_qtt, produits_nom, produits_photo) VALUES (:id_panier, '', '', '', '', '')";
             $stmt_insert_panier = $pdo->prepare($query_insert_panier);
             $stmt_insert_panier->execute([':id_panier' => $id_panier]);
         }
@@ -85,20 +86,57 @@ function ajouter_produit($id_produit, $quantite, $prix, $nom_produit, $photo_pro
             $_SESSION['panier'][$id_produit]['prix'] = $prix;
         } else {
             // Si le produit n'est pas dans le panier, l'ajouter
-            $_SESSION['panier'][$id_produit] = ['quantite' => $quantite, 'prix' => $prix, 'nom' => $nom_produit, 'photo' => $photo_produit];
+            $_SESSION['panier'][$id_produit] = [
+                'quantite' => $quantite,
+                'prix' => $prix,
+                'nom' => $nom_produit,
+                'photo' => $photo_produit
+            ];
         }
 
         // Mettre à jour les champs produits_id, produits_prix et produits_qtt dans la table Panier
         try {
-            // Concaténer les informations sur les produits avec les données existantes dans la table Panier
-            $query_update_panier = "UPDATE Panier SET produits_id = CONCAT(produits_id, ', ', :id_produit), produits_prix = CONCAT(produits_prix, ', ', :prix), produits_qtt = CONCAT(produits_qtt, ', ', :quantite), produits_nom = CONCAT(produits_nom, ', ', :nom), produits_photo = CONCAT(produits_photo, ', ', :photo) WHERE id_panier = :id_panier";
+            // Vérifier si les champs sont vides avant de concaténer
+            $query_get_panier = "SELECT produits_id, produits_prix, produits_qtt, produits_nom, produits_photo FROM Panier WHERE id_panier = :id_panier";
+            $stmt_get_panier = $pdo->prepare($query_get_panier);
+            $stmt_get_panier->execute([':id_panier' => $id_panier]);
+            $panier_data = $stmt_get_panier->fetch(PDO::FETCH_ASSOC);
+
+            $produits_id = $panier_data['produits_id'];
+            $produits_prix = $panier_data['produits_prix'];
+            $produits_qtt = $panier_data['produits_qtt'];
+            $produits_nom = $panier_data['produits_nom'];
+            $produits_photo = $panier_data['produits_photo'];
+
+            if (empty($produits_id)) {
+                $new_produits_id = $id_produit;
+                $new_produits_prix = $prix;
+                $new_produits_qtt = $quantite;
+                $new_produits_nom = $nom_produit;
+                $new_produits_photo = $photo_produit;
+            } else {
+                $new_produits_id = $produits_id . ',' . $id_produit;
+                $new_produits_prix = $produits_prix . ',' . $prix;
+                $new_produits_qtt = $produits_qtt . ',' . $quantite;
+                $new_produits_nom = $produits_nom . ',' . $nom_produit;
+                $new_produits_photo = $produits_photo . ',' . $photo_produit;
+            }
+
+            $query_update_panier = "UPDATE Panier SET 
+                produits_id = :produits_id, 
+                produits_prix = :produits_prix, 
+                produits_qtt = :produits_qtt, 
+                produits_nom = :produits_nom, 
+                produits_photo = :produits_photo 
+                WHERE id_panier = :id_panier";
+
             $stmt_update_panier = $pdo->prepare($query_update_panier);
             $stmt_update_panier->execute([
-                ':id_produit' => $id_produit,
-                ':prix' => $prix,
-                ':quantite' => $quantite,
-                ':nom' => $nom_produit,
-                ':photo' => $photo_produit,
+                ':produits_id' => $new_produits_id,
+                ':produits_prix' => $new_produits_prix,
+                ':produits_qtt' => $new_produits_qtt,
+                ':produits_nom' => $new_produits_nom,
+                ':produits_photo' => $new_produits_photo,
                 ':id_panier' => $id_panier
             ]);
         } catch (PDOException $e) {
@@ -111,6 +149,5 @@ function ajouter_produit($id_produit, $quantite, $prix, $nom_produit, $photo_pro
 
     require('view/v-panier.php');
 }
-
 
 
