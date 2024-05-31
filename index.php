@@ -3,6 +3,7 @@ require_once ('src/controllers/c-accueil.php');
 require_once('src/controllers/c-produitliste.php');
 require_once('src/controllers/c-paiement.php');
 require_once('src/controllers/c-detailproduit.php');
+require_once('src/controllers/c-panier.php');
 
 if(isset($_GET['url']) && $_GET['url']) {
     $url = rtrim($_GET['url'], '/');
@@ -10,6 +11,10 @@ if(isset($_GET['url']) && $_GET['url']) {
         switch ($url) {
             case 'produitliste':
                 produitliste();
+                break;
+
+            case 'panier':
+                panier();
                 break;
 
             case 'paiement':

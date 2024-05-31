@@ -8,6 +8,7 @@
                 </div>
             </div>
 
+        <form action="ajouter_produit" method="POST" class="block">
             <!-- Product info -->
             <div class="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
                 <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
@@ -17,12 +18,19 @@
                 <!-- Options -->
                 <div class="mt-4 lg:row-span-3 lg:mt-0">
                     <h2 class="sr-only">Informations du produit</h2>
-                    <p class="text-3xl tracking-tight text-gray-900"><?php echo $produit['prix'] ?>€</p>
-                    <form action="detailproduit" method="POST" class="block">
-                        <input type="hidden" name="id" value="<?php echo $produit['id_produit']; ?>">
-                        <button type="submit" class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Ajouter au panier</button>
-                    </form>
+                    <p class="text-3xl tracking-tight text-gray-900"><?php echo $produit['prix']; ?>€</p>
+                    <form action="ajouter_produit" method="POST" class="block">
+                        <input type="hidden" name="id_produit" value="<?php echo $produit['id_produit']; ?>">
+                        <input type="hidden" name="prix" value="<?php echo $produit['prix']; ?>">
+                        <label for="quantite">Quantité:</label>
+                        <input type="number" name="quantite" id="quantite" value="1" min="1" required>
+                        <button type="submit" class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                            Ajouter au panier
+                        </button>
                 </div>
+        </form>
+
+
 
                 <div class="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
                     <!-- Description and details -->
