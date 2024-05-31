@@ -11,16 +11,16 @@ function detailproduit()
     require('view/inc/header.php');
 
     // Vérifie si l'ID du produit est présent dans les données POST
-    if (isset($_POST['id'])) {
+    if (isset($_POST['id_produit'])) {
         // Récupère l'ID du produit depuis les données POST
-        $id = $_POST['id'];
+        $id = $_POST['id_produit'];
 
         // Initialise le tableau $produits
         $produits = array();
 
         // Préparation de la requête SQL avec un paramètre pour l'ID
         $query = /** @lang text */
-            "SELECT * FROM produit WHERE id = ?";
+            "SELECT * FROM produit WHERE id_produit = ?";
 
         // Préparation de la requête
         $stmt = $pdo->prepare($query);

@@ -19,7 +19,7 @@
                     <h2 class="sr-only">Informations du produit</h2>
                     <p class="text-3xl tracking-tight text-gray-900"><?php echo $produit['prix'] ?>€</p>
                     <form action="detailproduit" method="POST" class="block">
-                        <input type="hidden" name="id" value="<?php echo $produit['id']; ?>">
+                        <input type="hidden" name="id" value="<?php echo $produit['id_produit']; ?>">
                         <button type="submit" class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Ajouter au panier</button>
                     </form>
                 </div>

@@ -5,7 +5,7 @@
             <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                 <div class="group relative">
                     <form action="detailproduit" method="POST" class="block"> <!-- action vide pour soumettre le formulaire vers la même page -->
-                        <input type="hidden" name="id" value="<?php echo $produit['id']; ?>">
+                        <input type="hidden" name="id_produit" value="<?php echo $produit['id_produit']; ?>">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                             <img src="<?php echo $produit['photo'] ?>" alt="Front of men's Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
