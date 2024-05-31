@@ -21,6 +21,8 @@
                     <p class="text-3xl tracking-tight text-gray-900"><?php echo $produit['prix']; ?>€</p>
                     <form action="ajouter_produit" method="POST" class="block">
                         <input type="hidden" name="id_produit" value="<?php echo $produit['id_produit']; ?>">
+                        <input type="hidden" name="nom" value="<?php echo $produit['nom']; ?>">
+                        <input type="hidden" name="photo" value="<?php echo $produit['photo']; ?>">
                         <input type="hidden" name="prix" value="<?php echo $produit['prix']; ?>">
                         <label for="quantite">Quantité:</label>
                         <input type="number" name="quantite" id="quantite" value="1" min="1" required>
