@@ -44,18 +44,16 @@ function detailproduit()
 
 
 
+
+
+
 if (isset($_POST['id_produit']) && isset($_POST['quantite']) && isset($_POST['prix'])) {
     $id_produit = $_POST['id_produit'];
     $quantite = $_POST['quantite'];
     $prix = $_POST['prix'];
     $nom_produit = $_POST['nom'];
     $photo_produit = $_POST['photo'];
-    ajouter_produit($id_produit, $quantite, $prix,$nom_produit,$photo_produit);
-}
 
-//Ajout de produit dans la base////
-function ajouter_produit($id_produit, $quantite, $prix, $nom_produit, $photo_produit)
-{
     global $pdo;
 
     try {
@@ -147,7 +145,11 @@ function ajouter_produit($id_produit, $quantite, $prix, $nom_produit, $photo_pro
         echo "Erreur lors de l'ajout du produit au panier: " . $e->getMessage();
     }
 
-    require('view/v-panier.php');
+    echo '<script>';
+    echo 'alert("Produit ajouté au panier !!")';
+    echo '</script>';
+
+
 }
 
 
