@@ -4,7 +4,6 @@ require_once('src/model.php');
 
 function panier()
 {
-
     global $pdo;
 
     $menu['page'] = 'panier';
@@ -14,6 +13,7 @@ function panier()
     try {
         // Récupérer les données du panier depuis la base de données
         $query = "SELECT produits_id, produits_prix, produits_qtt, produits_nom, produits_photo FROM Panier";
+
         $stmt = $pdo->query($query);
 
         if ($stmt) {
@@ -26,6 +26,10 @@ function panier()
             $produits_qtt = [];
             $produits_nom = [];
             $produits_photo = [];
+
+            // Variables pour le sous-total et le total
+            $sous_total = 0;
+            $total = 0;
 
             // Parcourir chaque ligne du panier
             foreach ($panier_data as $produit) {
@@ -44,7 +48,15 @@ function panier()
                 $produits_photo = array_merge($produits_photo, $photos);
             }
 
-            // Passer les tableaux de produits à la vue
+            // Calculer le sous-total
+            foreach ($produits_id as $key => $id) {
+                $sous_total += $produits_qtt[$key] * $produits_prix[$key];
+            }
+
+            // Calculer le total (ajouter les frais de livraison si nécessaire)
+            $total = $sous_total; // Ajoutez ici les frais de livraison ou autres frais si nécessaire
+
+            // Passer les tableaux de produits et les totaux à la vue
             require('view/v-panier.php');
         } else {
             echo "Aucun produit trouvé.";
@@ -55,4 +67,3 @@ function panier()
 
     require('view/inc/footer.php');
 }
-
