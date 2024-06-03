@@ -1,9 +1,9 @@
 <?php
 require_once ('src/controllers/c-accueil.php');
 require_once('src/controllers/c-produitliste.php');
-require_once('src/controllers/c-paiement.php');
 require_once('src/controllers/c-detailproduit.php');
 require_once('src/controllers/c-panier.php');
+require_once('src/controllers/c-commande.php');
 
 
 // Rediriger vers les contrôleurs appropriés en fonction de l'URL
@@ -15,12 +15,12 @@ if(isset($_GET['url']) && $_GET['url']) {
                 produitliste();
                 break;
 
-            case 'panier':
-                panier();
+            case 'commande':
+                commande();
                 break;
 
-            case 'paiement':
-                paiement();
+            case 'panier':
+                panier();
                 break;
 
             case 'detailproduit':
