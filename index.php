@@ -5,6 +5,8 @@ require_once('src/controllers/c-paiement.php');
 require_once('src/controllers/c-detailproduit.php');
 require_once('src/controllers/c-panier.php');
 
+
+// Rediriger vers les contrôleurs appropriés en fonction de l'URL
 if(isset($_GET['url']) && $_GET['url']) {
     $url = rtrim($_GET['url'], '/');
     if ($url) {
@@ -31,4 +33,3 @@ if(isset($_GET['url']) && $_GET['url']) {
         }
     } else accueil();
 }else accueil();
-

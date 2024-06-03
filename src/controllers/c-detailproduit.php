@@ -1,7 +1,7 @@
 <?php
 
 require_once('src/model.php');
-/*unset($_SESSION['panier']);*/
+
 
 function detailproduit()
 {
@@ -39,11 +39,10 @@ function detailproduit()
     } else {
         echo "Aucun ID de produit n'a été transmis.";
     }
-
     require('view/v-detailproduit.php');
-    var_dump($_SESSION);
 
 }
+
 
 function ajouter_panier()
 {
@@ -79,12 +78,10 @@ function ajouter_panier()
             // Ajouter le produit au panier
             $_SESSION['panier'][] = $nouveau_produit;
         }
+        echo '<script>';
+        echo 'alert("Produit ajouté au panier")';
+        echo '</script>';
     }
 }
 
-
-
 ajouter_panier();
-
-
-
