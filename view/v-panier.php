@@ -1,4 +1,4 @@
-<?php require_once 'src/controllers/calcul_panier.php'?>
+<?php require_once 'src/controllers/calcul_panier.php';?>
 
 <body>
     <div class="h-screen bg-gray-100 pt-20">
