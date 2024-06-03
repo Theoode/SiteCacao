@@ -1,9 +1,8 @@
 
 <?php
-
+session_start();
 
 require_once('src/model.php');
-session_start();
 function accueil()
 {
     $produits = getRandomProducts();
