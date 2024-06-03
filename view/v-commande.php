@@ -1,4 +1,6 @@
 <?php require_once 'src/controllers/calcul_panier.php';?>
+<?php require_once 'src/controllers/paypal_init.php'; ?>
+
 
 <body>
 <div class="h-screen bg-gray-100 flex justify-center items-center">
@@ -57,7 +59,7 @@
             </div>
             <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 <h1 class="mb-10 text-center text-2xl font-bold">Paiement PayPal</h1>
-                <div id="paypal-boutons"></div>
+
             </div>
         </div>
     </div>
