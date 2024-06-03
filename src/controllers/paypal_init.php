@@ -4,17 +4,22 @@ require_once('vendor/autoload.php');
 
 use PayPal\Rest\ApiContext;
 use PayPal\Auth\OAuthTokenCredential;
+use PayPal\Api\Payment;
+
+
+
+$clientId = 'VOTRE_ID_CLIENT_PAYPAL';
+$clientSecret = 'VOTRE_SECRET_CLIENT_PAYPAL';
 
 $apiContext = new ApiContext(
     new OAuthTokenCredential(
-        'YOUR_CLIENT_ID',     // Remplacez par votre ID client PayPal
-        'YOUR_CLIENT_SECRET'  // Remplacez par votre secret client PayPal
+        $clientId,
+        $clientSecret
     )
 );
 
 $apiContext->setConfig([
-    'mode' => 'sandbox', // Utilisez 'live' pour la production
+    'mode' => 'sandbox',
 ]);
 
-// Maintenant, vous pouvez utiliser $apiContext pour effectuer des appels API PayPal
-
+$payment = new Payment();
