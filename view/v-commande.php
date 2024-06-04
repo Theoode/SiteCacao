@@ -1,5 +1,4 @@
 <?php require_once 'src/controllers/calcul_panier.php';
-require_once 'src/controllers/paypal_init.php';
 ?>
 <body>
 <div class="h-screen bg-gray-100 flex justify-center items-center">
@@ -58,27 +57,11 @@ require_once 'src/controllers/paypal_init.php';
             </div>
             <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 <h1 class="mb-10 text-center text-2xl font-bold">Paiement PayPal</h1>
-                <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                    <h1 class="mb-10 text-center text-2xl font-bold">Paiement PayPal</h1>
-                    <?php
-                    try {
-                        // Créer un paiement PayPal
-                        $payment->create($apiContext);
 
-                        // Afficher le bouton de paiement PayPal
-                        echo '<div class="text-center">';
-                        echo '<a href="' . $payment->getApprovalLink() . '" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Payer avec PayPal</a>';
-                        echo '</div>';
-                    } catch (Exception $ex) {
-                        // Gérer les erreurs
-                        echo '<div class="text-center text-red-500">Une erreur s\'est produite lors de la création du paiement PayPal. Veuillez réessayer plus tard.</div>';
-                    }
-                    ?>
+
                 </div>
             </div>
         </div>
     </div>
-</div>
 </body>
-
 
