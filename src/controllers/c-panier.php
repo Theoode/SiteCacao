@@ -36,4 +36,3 @@ function supprimer_produit_panier()
 }
 supprimer_produit_panier();
 
-

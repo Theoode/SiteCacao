@@ -40,7 +40,7 @@
                         <p class="text-sm text-gray-700">TVA incluse</p>
                     </div>
                 </div>
-                <button name="commande" class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600" onclick="redirigerVersCommande()">Commander</button>
+                <button name="creer_commande" class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600" onclick="redirigerVersCommande()">Commander</button>
             </div>
         </div>
     </div>

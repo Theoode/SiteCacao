@@ -1,14 +1,12 @@
-
 <?php
 
-
 require_once('src/model.php');
-function commande()
+function paiement()
 {
-    $menu['page'] = 'commande';
+
+    $menu['page'] = 'paiement';
     require('view/inc/head.php');
     require('view/inc/header.php');
-    require('view/v-commande.php');
-
+    require('view/v-paiement.php');
 
 }
